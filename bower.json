@@ -1,0 +1,12 @@
+{
+  "name": "Frontend empty",
+  "description": "",
+  "main": "gulpfile.js",
+  "authors": [
+    "Djetson <evgenbazeluk@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "private": true,
+  "dependencies": {}
+}

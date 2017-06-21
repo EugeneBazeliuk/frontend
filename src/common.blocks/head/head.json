@@ -1,0 +1,22 @@
+{
+	"head": {
+		"title": "AKONIT - {{ this.page.title }}",
+		"meta": [
+			{ "charset": "utf-8" },
+			{ "name": "title", "content": "{{ this.page.title }}"},
+			{ "name": "description", "content": "{{ this.page.meta_description }}"},
+			{ "name": "author", "content": "Akonit"},
+			{ "name": "format-detection", "content": "telephone=no"},
+			{ "name": "viewport", "content": "width=device-width, initial-scale=1.0"},
+			{ "name": "HandheldFriendly", "content": "true"},
+			{ "name": "generator", "content": "OctoberCMS"},
+			{ "http-equiv": "X-UA-Compatible", "content":"IE=edge"}
+		],
+		"css": [
+			{ "href": "assets/css/style.css"}
+		],
+		"favicon": {
+			"href": "favicon.ico"
+		}
+	}
+}

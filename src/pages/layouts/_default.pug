@@ -1,0 +1,30 @@
+include ../../common.blocks/head/head
+include ../../common.blocks/header/header
+include ../../common.blocks/footer/footer
+
+doctype html
+html
+    head
+        +head(head)
+
+    body
+
+        // LAYOUT HEADER
+        header#layout-header.layout-header
+            block header
+                +header(header)
+
+        // LAYOUT CONTENT
+        #layout-content.layout-content
+            block content
+
+        // LAYOUT FOOTER
+        footer#layout-footer.layout-footer
+            block footer
+                +footer(footer)
+
+        // CORE SCRIPTS
+        block core-scripts
+
+        // LAYOUT SCRIPTS
+        block layout-scripts

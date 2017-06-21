@@ -1,0 +1,32 @@
+mixin head(head)
+    // TITLE
+    +title(head.title)
+    // META
+    +meta(head.meta)
+    // STYLES
+    block site-styles
+        +styles(head.css)
+    // FAVICON
+    +favicon(head.favicon)
+
+//- TITLE
+mixin title(title)
+    title= title
+
+//- META
+mixin meta(collection)
+    each item in collection
+        meta&attributes(item)
+
+//- STYLES
+mixin styles(items)
+    each item in items
+        +style(item)
+
+//- STYLE
+mixin style(item)
+    link(rel="stylesheet" type="text/css")&attributes(item)
+
+//- FAVICON
+mixin favicon(item)
+    link(rel="shortcut icon")&attributes(item)
