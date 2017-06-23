@@ -92,6 +92,18 @@ gulp.task('compile-styles', function(cb) {
     cb()
 });
 
+/**
+ * TEST SCSS
+ */
+gulp.task('scss', function(cb) {
+    gulp.src('./src/scss/**/[^_]*.scss')
+        .pipe(plumber(options.plumber))
+        .pipe(sass())
+        .pipe(gulp.dest(paths.styles.dest))
+        .pipe(bs.stream({match: '**/*.css'}));
+    cb();
+});
+
 gulp.task('build-css', gulp.series('combine-modules-styles', 'compile-styles'));
 
 // ---------------------------------
@@ -187,7 +199,6 @@ gulp.task('server', function() {
         },
         ui: false,
         tunnel: false,
-        open: false,
         reloadOnRestart: true,
         browser: "google chrome"
     });
@@ -205,6 +216,8 @@ gulp.task('server', function() {
 
     // Reload server
     gulp.watch(paths.templates.dest + '**/*.html').on('change', reload);
+
+    gulp.watch('./src/scss/' + '**/*', gulp.parallel('scss'));
 });
 
 
@@ -236,5 +249,5 @@ function errorHendler(err) {
 // ---------------------------------
 // Init
 // ---------------------------------
-gulp.task('build', gulp.parallel('build-html', 'build-css', 'build-js', 'copy-images', 'copy-assets'));
+gulp.task('build', gulp.parallel('build-html', 'build-css', 'build-js', 'copy-images', 'copy-assets', 'scss'));
 gulp.task('default', gulp.series(clean, 'build', 'server'));

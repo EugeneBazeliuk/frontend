@@ -12,9 +12,18 @@
 			{ "name": "generator", "content": "OctoberCMS"},
 			{ "http-equiv": "X-UA-Compatible", "content":"IE=edge"}
 		],
-		"css": [
-			{ "href": "assets/css/style.css"}
-		],
+		"fonts": {
+		
+		},
+		"css": {
+			"vendor": {
+			
+			},
+			"theme": [
+				{ "href": "assets/css/style.css" },
+				{ "href": "assets/css/global/global.css" }
+			]
+		},
 		"favicon": {
 			"href": "favicon.ico"
 		}

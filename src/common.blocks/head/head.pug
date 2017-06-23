@@ -1,13 +1,19 @@
 mixin head(head)
-    // TITLE
-    +title(head.title)
-    // META
-    +meta(head.meta)
-    // STYLES
-    block site-styles
-        +styles(head.css)
-    // FAVICON
-    +favicon(head.favicon)
+    // Begin head
+    head
+        // Title
+        +title(head.title)
+        // Meta
+        +meta(head.meta)
+        // Vendor Styles
+        block vendor-styles
+            +styles(head.css.vendor)
+        // Theme Styles
+        block theme-styles
+            +styles(head.css.theme)
+        // Favicon
+        +favicon(head.favicon)
+    // End head
 
 //- TITLE
 mixin title(title)
